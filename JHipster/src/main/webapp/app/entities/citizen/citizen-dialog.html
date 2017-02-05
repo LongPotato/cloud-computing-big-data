@@ -1,0 +1,60 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myCitizenLabel">Create or edit a Citizen</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.citizen.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.citizen.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.citizen.name"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_dob">Dob</label>
+                <div class="input-group">
+                    <input id="field_dob" type="text" class="form-control" name="dob" datetime-picker="{{dateformat}}" ng-model="vm.citizen.dob" is-open="vm.datePickerOpenStatus.dob"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dob')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_gender">Gender</label>
+            <input type="text" class="form-control" name="gender" id="field_gender"
+                    ng-model="vm.citizen.gender"
+                    />
+        </div>
+
+        <div class="form-group">
+            <label for="field_passport">Passport</label>
+            <select class="form-control" id="field_passport" name="passport" ng-model="vm.citizen.passport" ng-options="passport as passport.id for passport in vm.passports | orderBy:'id' track by passport.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_country">Country</label>
+            <select class="form-control" id="field_country" name="country" ng-model="vm.citizen.country" ng-options="country as country.id for country in vm.countries track by country.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

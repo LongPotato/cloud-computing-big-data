@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "passport",
+            "otherEntityName": "passport",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "citizen"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "country",
+            "otherEntityName": "country",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dob",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "gender",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170205002844",
+    "entityTableName": "citizen",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}

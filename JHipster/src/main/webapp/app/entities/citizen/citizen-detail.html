@@ -1,0 +1,39 @@
+
+<div>
+    <h2><span>Citizen</span> {{vm.citizen.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span>Name</span></dt>
+        <dd>
+            <span>{{vm.citizen.name}}</span>
+        </dd>
+        <dt><span>Dob</span></dt>
+        <dd>
+            <span>{{vm.citizen.dob | date:'medium'}}</span>
+        </dd>
+        <dt><span>Gender</span></dt>
+        <dd>
+            <span>{{vm.citizen.gender}}</span>
+        </dd>
+        <dt><span>Passport</span></dt>
+        <dd>
+            <a ui-sref="passport-detail({id:vm.citizen.passport.id})">{{vm.citizen.passport.id}}</a>
+        </dd>
+        <dt><span>Country</span></dt>
+        <dd>
+            <a ui-sref="country-detail({id:vm.citizen.country.id})">{{vm.citizen.country.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="citizen-detail.edit({id:vm.citizen.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down"> Edit</span>
+    </button>
+</div>

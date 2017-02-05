@@ -1,0 +1,22 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "citizen",
+            "otherEntityName": "citizen",
+            "otherEntityRelationshipName": "country"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170205002844",
+    "entityTableName": "country",
+    "dto": "no",
+    "pagination": "no",
+    "service": "no"
+}
