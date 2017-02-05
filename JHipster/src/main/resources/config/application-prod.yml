@@ -21,9 +21,9 @@ spring:
             enabled: false
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:mysql://localhost:3306/JHipster?useUnicode=true&characterEncoding=utf8&useSSL=false
-        username: root
-        password:
+        url: jdbc:mysql://mister-potato-database.cdzqjuwgwtyk.us-west-2.rds.amazonaws.com:3306/funny?useUnicode=true&characterEncoding=utf8&useSSL=false
+        username: admin
+        password: 123456789
         hikari:
             data-source-properties:
                 cachePrepStmts: true
