@@ -1,4 +1,4 @@
-#Apple stock price Elastic Search & Kibana
+Apple stock price Elastic Search & Kibana
 
 The program uses Node.js to get the Apple stock price from Google finance every one hour.
 It then inputs the data into AWS elastic search.
